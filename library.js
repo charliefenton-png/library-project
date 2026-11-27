@@ -1,6 +1,6 @@
 const myLibrary = [];
 
-function book(title, author, read) {
+function Book(title, author, read) {
   if (!new.target) {
     throw Error("You must use the 'new' operator to call the constructor");
   }
@@ -12,17 +12,29 @@ function book(title, author, read) {
   };
 }
 
+let bookOne = new Book("Game of Thrones", "George R. R. Martin", "read");
 
-function addBookToLibrary() {
-  // take params, create a book then store it in the array
+function addBookToLibrary(books, title, author, read) {
+  myLibrary.push({title, author, read});
+  return books;
 }
+
+ myLibrary.push(bookOne);
+  console.log(myLibrary);
 
 
 let uuid = self.crypto.randomUUID();
 console.log(uuid);
 
+bookOne.sayBook() 
+
+
+// const bookOne = document.querySelector("#bookOne"); //
+// bookOne.dataset.idnumber; "7dcab080-56db-471e-a2d2-261d3c8b6d55"
 
 
 
-const bookOne = document.querySelector("#bookOne");
-bookOne.dataset.idnumber;
+
+
+const moreBooks = ["Critique of Pure Reason", "Immanuel Kant", "read"];
+console.log(addBookToLibrary(moreBooks)); 
